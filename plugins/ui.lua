@@ -73,7 +73,7 @@ return {
     },
 
     -----------------------
-    -- Bar
+    -- Status bar
     -----------------------
     {
         'nvim-lualine/lualine.nvim',

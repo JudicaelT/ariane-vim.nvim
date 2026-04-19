@@ -1,8 +1,8 @@
 local map = vim.keymap.set
 
-map("v", "<leader>r", "\"_dP", { desc = "Replace selected content by yanked content without overriding registry" })
-map("n", "<leader>r", "viw\"_dP", { desc = "Replace word by yanked content without overriding registry" })
-map("n", "<leader>R", "viW\"_dP", { desc = "Replace WORD by yanked content without overriding registry" })
+map("v", "<leader>r", "\"_dP", { desc = "Replace selected text by yanked text without overriding registry" })
+map("n", "<leader>r", "viw\"_dP", { desc = "Replace word by yanked text without overriding registry" })
+map("n", "<leader>R", "viW\"_dP", { desc = "Replace WORD by yanked text without overriding registry" })
 
 map("n", "<leader>c", "ciw", { desc = "Change word" })
 map("n", "<leader>C", "ciW", { desc = "Change WORD" })
