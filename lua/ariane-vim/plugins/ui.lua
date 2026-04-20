@@ -4,34 +4,36 @@ return {
     -----------------------
     {
         "vague2k/vague.nvim",
-        config = function()
-            require("vague").setup({
-                transparent = true,
-                colors = {
-                    -- slightly more vibrant colors than the original theme
-                    fg = "#d5d5d5",
-                    floatborder = "#999999",
-                    line = "#2a2a35",
-                    builtin = "#a5e0da",
-                    func = "#dd7474",
-                    string = "#f0b97a",
-                    number = "#f2a45c",
-                    property = "#cfcff0",
-                    constant = "#bebee6",
-                    comment = "#767696",
-                    parameter = "#d1a7c9",
-                    visual = "#4a5a70",
-                    error = "#ef5e76",
-                    warning = "#f2a45c",
-                    hint = "#90aaf0",
-                    operator = "#9aaacc",
-                    keyword = "#81a8cc",
-                    type = "#9ec8d0",
-                    search = "#4a5a70",
-                    plus = "#98c87a",
-                    delta = "#f5c37d",
-                },
-            })
+        lazy = false,
+        opts = {
+            transparent = true,
+            colors = {
+                -- slightly more vibrant colors than the original theme
+                fg = "#d5d5d5",
+                floatborder = "#999999",
+                line = "#2a2a35",
+                builtin = "#a5e0da",
+                func = "#dd7474",
+                string = "#f0b97a",
+                number = "#f2a45c",
+                property = "#cfcff0",
+                constant = "#bebee6",
+                comment = "#767696",
+                parameter = "#d1a7c9",
+                visual = "#4a5a70",
+                error = "#ef5e76",
+                warning = "#f2a45c",
+                hint = "#90aaf0",
+                operator = "#9aaacc",
+                keyword = "#81a8cc",
+                type = "#9ec8d0",
+                search = "#4a5a70",
+                plus = "#98c87a",
+                delta = "#f5c37d",
+            },
+        },
+        config = function(_, opts)
+            require("vague").setup(opts)
             vim.cmd("colorscheme vague")
             -- Override line numbers colors to be more visible
             vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#4d4d5f', bold = true })
@@ -47,18 +49,26 @@ return {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {},
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        }
+        dependencies = { "MunifTanjim/nui.nvim" }
     },
 
     -----------------------
     -- Syntax tree parsing
     -----------------------
     {
-        'nvim-treesitter/nvim-treesitter',
+        "nvim-treesitter/nvim-treesitter",
         lazy = false,
-        build = ':TSUpdate'
+        build = ":TSUpdate",
+        branch = "master",
+        opts = {
+            auto_install = true,
+            highlight = { enable = true, },
+            indent = { enable = true },
+            folds = { enable = true },
+        },
+        config = function (_, opts)
+            require("nvim-treesitter.configs").setup(opts)
+        end
     },
 
     -----------------------
