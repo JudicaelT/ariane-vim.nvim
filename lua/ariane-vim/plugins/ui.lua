@@ -34,11 +34,16 @@ return {
         },
         config = function(_, opts)
             require("vague").setup(opts)
+            vim.api.nvim_create_autocmd("ColorScheme", {
+                pattern = "vague",
+                callback = function()
+                    -- Override line numbers colors to be more visible
+                    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#4d4d5f', bold = true })
+                    vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#a5e0da', bold = true })
+                    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#4d4d5f', bold = true })
+                end,
+            })
             vim.cmd("colorscheme vague")
-            -- Override line numbers colors to be more visible
-            vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#4d4d5f', bold = true })
-            vim.api.nvim_set_hl(0, 'LineNr', { fg = '#a5e0da', bold = true })
-            vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#4d4d5f', bold = true })
         end
     },
 
