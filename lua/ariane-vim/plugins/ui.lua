@@ -9,6 +9,7 @@ return {
             colors = {
                 -- slightly more vibrant colors than the original theme
                 bg = "#202020",
+                inactiveBg = "#151515",
                 fg = "#d5d5d5",
                 floatborder = "#999999",
                 line = "#2a2a35",
