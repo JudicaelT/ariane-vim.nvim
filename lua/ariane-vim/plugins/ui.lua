@@ -39,9 +39,9 @@ return {
                 pattern = "vague",
                 callback = function()
                     -- Override line numbers colors to be more visible
-                    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#4d4d5f', bold = true })
-                    vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#a5e0da', bold = true })
-                    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#4d4d5f', bold = true })
+                    vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#4d4d5f", bold = true })
+                    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#a5e0da", bold = true })
+                    vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#4d4d5f", bold = true })
                 end,
             })
             vim.cmd("colorscheme vague")
@@ -127,18 +127,18 @@ return {
     -- Status bar
     -----------------------
     {
-        'nvim-lualine/lualine.nvim',
+        "nvim-lualine/lualine.nvim",
         dependencies = {
-            'nvim-tree/nvim-web-devicons'
+            "nvim-tree/nvim-web-devicons"
         },
         config = function()
-            require('lualine').setup {
+            require("lualine").setup {
                 sections = {
-                    lualine_a = { { 'mode', fmt = function(res) return ' ' .. res end } },
+                    lualine_a = { { "mode", fmt = function(res) return " " .. res end } },
                 },
                 options = {
-                    component_separators = '',
-                    section_separators = { left = '', right = '' },
+                    component_separators = "",
+                    section_separators = { left = "", right = "" },
                 },
             }
         end

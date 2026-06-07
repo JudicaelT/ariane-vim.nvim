@@ -75,7 +75,7 @@ return {
     -- Comments
     -----------------------
     {
-        'numToStr/Comment.nvim',
+        "numToStr/Comment.nvim",
         opts = {}
     },
 }
